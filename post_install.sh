@@ -8,7 +8,7 @@
 # sysrc shellinaboxd_enable=YES
 # sysrc shellinaboxd_flags="--css /home/tetris/white-on-black.css -t -s /:tetris:tetris:HOME:bastet"
 
-git clone https://github.com/founek2/IOT-Platforma-bots.git /home/IOT-Platform-bots
+# git clone https://github.com/founek2/IOT-Platforma-bots.git /home/IOT-Platform-bots
 
 # Start the service
 # service shellinaboxd start
