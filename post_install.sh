@@ -2,7 +2,11 @@
 
 # Create user 'tetris'
 pw add user -n deployer -c Deployer -s /bin/csh -m
-yarn global add pm2
+yarn global install --silent pm2
+
+git clone https://github.com/founek2/IOT-Platforma-bots.git /home/deployer/IOT-Platform-bots
+cd IOT-Platform-bots && yarn
+chown -R deployer /home/deployer
 
 # Configure shellinabox
 # fetch -o /home/tetris/white-on-black.css https://raw.githubusercontent.com/shellinabox/shellinabox/master/shellinabox/white-on-black.css
@@ -21,7 +25,3 @@ sysrc -f /etc/rc.conf pm2_enable="YES"
 # service rabbitmq start
 # service mongod start
 service pm2 start
-
-su - deployer
-git clone https://github.com/founek2/IOT-Platforma-bots.git IOT-Platform-bots
-cd IOT-Platform-bots && yarn
