@@ -2,7 +2,7 @@
 
 # Create user 'tetris'
 pw add user -n deployer -c Deployer -s /bin/csh -m
-yarn global install --silent pm2
+yarn global add --silent pm2
 
 git clone https://github.com/founek2/IOT-Platforma-bots.git /home/deployer/IOT-Platform-bots
 cd IOT-Platform-bots && yarn
