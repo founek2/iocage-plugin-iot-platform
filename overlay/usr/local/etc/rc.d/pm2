@@ -33,7 +33,7 @@ start_cmd="pm2_start"
 stop_cmd="pm2_stop"
 restart_cmd="pm2_restart"
 
-: ${pm2_user="freebsd"}
+: ${pm2_user="deployer"}
 : ${pm2_enable="NO"}
 
 pm2_start() {
