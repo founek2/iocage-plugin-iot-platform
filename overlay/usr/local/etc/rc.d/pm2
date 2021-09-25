@@ -15,51 +15,46 @@
 # pm2_enable="YES"
 # pm2_user="freebsd"
 
-
 # PROVIDE: pm2
 # REQUIRE: NETWORK mongod
 # KEYWORD: shutdown
 #
- 
+
 . /etc/rc.subr
- 
+
 name=pm2
 rcvar=pm2_enable
- 
-PM2=/usr/local/lib/node_modules/pm2/bin/pm2
- 
+
+PM2=pm2
+
 load_rc_config $name
- 
+
 start_cmd="pm2_start"
 stop_cmd="pm2_stop"
 restart_cmd="pm2_restart"
- 
+
 : ${pm2_user="freebsd"}
 : ${pm2_enable="NO"}
- 
-pm2_start()
-{
+
+pm2_start() {
         CMD="$PM2 resurrect"
         su -l ${pm2_user} -c "${CMD}"
- 
+
 }
- 
-pm2_stop()
-{
+
+pm2_stop() {
         CMD="${PM2} dump && ${PM2} delete all && ${PM2} kill"
         su -l ${pm2_user} -c "${CMD}"
 }
- 
-pm2_restart()
-{
+
+pm2_restart() {
         CMD="pm2_stop && pm2_start"
         su -l ${pm2_user} -c "${CMD}"
 }
- 
-pm2_reload()
-{
+
+pm2_reload() {
         CMD="$PM2 reload all"
         su -l ${pm2_user} -c "${CMD}"
 }
- 
+
 run_rc_command "$1"
