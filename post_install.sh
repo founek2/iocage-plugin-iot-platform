@@ -21,4 +21,4 @@ sysrc -f /etc/rc.conf pm2_enable="YES"
 # service nginx start
 # service rabbitmq start
 # service mongod start
-service pm2 start
+# service pm2 start
