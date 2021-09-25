@@ -2,6 +2,7 @@
 
 # Create user 'tetris'
 pw add user -n freebsd -c Freebsd -s /bin/csh -m
+yarn global add pm2
 
 # Configure shellinabox
 # fetch -o /home/tetris/white-on-black.css https://raw.githubusercontent.com/shellinabox/shellinabox/master/shellinabox/white-on-black.css
