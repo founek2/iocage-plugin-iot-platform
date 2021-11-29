@@ -19,9 +19,12 @@ chown -R deployer /home/deployer
 # sysrc -f /etc/rc.conf nginx_enable="YES"
 # sysrc -f /etc/rc.conf rabbitmq_enable="YES"
 # sysrc -f /etc/rc.conf mongod_enable="YES"
-sysrc -f /etc/rc.conf pm2_enable="YES"
+#sysrc -f /etc/rc.conf pm2_enable="YES"
 
 # service nginx start
 # service rabbitmq start
 # service mongod start
-service pm2 start
+# service pm2 start
+pm2 start
+pm2 save
+pm2 startup
